@@ -30,7 +30,7 @@ public class Tantargy implements Serializable{
     }
 
     public void setKredit(int kredit) {
-        if (kredit < 1 ||kredit > 5){
+        if (kredit < 1 || kredit > 5){
             throw new NemJoKreditException("A kredit nem lehet kisebb mint 1, vagy nagyobb mitn 5");
         }
         this.kredit = kredit;
