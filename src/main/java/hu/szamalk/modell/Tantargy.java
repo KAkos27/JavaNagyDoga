@@ -13,7 +13,7 @@ public class Tantargy implements Serializable{
     private boolean csakVizsga;
 
     public Tantargy(){
-        this("informatika;3;Kovács Imre;Turán Lajos;1;nem");
+        this(" ;1; ; ;1;nem");
     }
 
     public Tantargy(String sor){
@@ -49,7 +49,7 @@ public class Tantargy implements Serializable{
     }
 
     public List<String> getTanarok() {
-        return tanarok;
+        return Collections.unmodifiableList(tanarok);
     }
 
     public boolean isCsakVizsga() {
