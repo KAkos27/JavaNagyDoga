@@ -2,25 +2,58 @@ package hu.szamalk.modell;
 
 import java.io.Serializable;
 import java.text.Collator;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Tantargy implements Serializable{
 
     private String nev;
     private int kredit;
     private List<String> tanarok;
+    private int felev;
     private boolean csakVizsga;
+
+    public Tantargy(){
+        this("informatika;3;Kovács Imre;Turán Lajos;1;nem");
+    }
 
     public Tantargy(String sor){
         String[] sorLista = sor.split(";");
         String[] tanarok = sorLista[3].equals("-") ? new String[]{sorLista[2]} : new String[]{sorLista[2], sorLista[3]};
+        if (Objects.equals(tanarok[0], tanarok[1])){
+            tanarok[1] = "-";
+        }
         this.nev = sorLista[0];
-        this.kredit = Integer.parseInt(sorLista[1]);
+        setKredit(Integer.parseInt(sorLista[1]));
         this.tanarok = new ArrayList<>(Arrays.asList(tanarok));
+        this.felev = Integer.parseInt(sorLista[4]);
         this.csakVizsga = sorLista[5].equals("igen");
+    }
+
+    public void setKredit(int kredit) {
+        if (kredit < 1 ||kredit > 5){
+            throw new NemJoKreditException("A kredit nem lehet kisebb mint 1, vagy nagyobb mitn 5");
+        }
+        this.kredit = kredit;
+    }
+
+    public int getFelev() {
+        return felev;
+    }
+
+    public String getNev() {
+        return nev;
+    }
+
+    public int getKredit() {
+        return kredit;
+    }
+
+    public List<String> getTanarok() {
+        return tanarok;
+    }
+
+    public boolean isCsakVizsga() {
+        return csakVizsga;
     }
 
     @Override

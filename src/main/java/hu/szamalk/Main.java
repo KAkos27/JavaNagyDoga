@@ -8,7 +8,6 @@ public class Main {
         Szak sz = new Szak("Szak");
         sz.szakKiirasa();
         sz.szakBeolvasasa();
-
-
+        sz.statisztika();
     }
 }

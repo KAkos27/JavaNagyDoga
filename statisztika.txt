@@ -1,0 +1,8 @@
+Különböző tárgyak: 7
+Vizsga tágyak:
+informatika, 4, 3
+irodalom, 4, 3
+Összes kredit:25
+Min kredit: matematika, 2
+Max kredit: matematika, 5
+{történelem=[Hollenzoller Gerzson], informatika=[Kovács Imre, Turán Lajos, Horvát Rudolf], matematika=[Kiss Ádám, Szekeres Barnabás, Roffer Rozália], irodalom=[Kovács József, Hollenzoller Gerzson]}
